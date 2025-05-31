@@ -1,8 +1,13 @@
-import express from 'express'
-import { create } from '../Controller/userController.js';
+import express from 'express';
+import { create, getAll, getSingleUser, update } from '../Controller/userController.js';
 
-const route = express.Router();
+const router = express.Router();
 
-route.post("/create",create)
+// User routes
+router.post("/create", create); 
+router.get("/getall", getAll); 
+router.get("/getSingleUser/:id", getSingleUser); 
+route.get("/getSingleUser/:id",getSingleUser)
+route.put("/update/:id",update)
 
-export default route;
+export default router;
